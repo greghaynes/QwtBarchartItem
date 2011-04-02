@@ -5,6 +5,7 @@
 #include <qwt_text.h>
 
 #include <QList>
+#include <QPair>
 
 class BarChartItem
 	: public QwtPlotItem
@@ -13,13 +14,13 @@ class BarChartItem
 	public:
 		BarChartItem(const QwtText &title = QwtText());
 
-		void setBarHeights(const QList<int> &heights);
-		const QList<int> &barHeights(void) const;
+		void setData(const QList< QPair<int, QString> > &heights);
+		const QList< QPair<int, QString> > &data(void) const;
 
 		void draw(QPainter *painter, const QwtScaleMap &xMap, const QwtScaleMap &yMap, const QRect &canvasRect) const;
 
 	private:
-		QList<int> m_barHeights;
+		QList< QPair<int, QString> > m_data;
 
 };
 

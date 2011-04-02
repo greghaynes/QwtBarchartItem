@@ -23,11 +23,11 @@ int main(int argc, char **argv)
 
 	BarChartItem *item = new BarChartItem();
 	item->attach(&plot);
-	QList<int> barHeights;
-	barHeights.append(10);
-	barHeights.append(100);
-	barHeights.append(20);
-	item->setBarHeights(barHeights);
+	QList< QPair<int, QString> > barHeights;
+	barHeights.append(QPair<int, QString>(10, ""));
+	barHeights.append(QPair<int, QString>(100, ""));
+	barHeights.append(QPair<int, QString>(20, ""));
+	item->setData(barHeights);
 
 	plot.enableAxis(QwtPlot::xBottom, false);
 
